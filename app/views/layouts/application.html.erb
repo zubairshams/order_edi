@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TestApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>TestApp</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container-narrow">
+      <div class="masthead">
+        <%= render 'layouts/user_header' %>
+        <h3 class="muted"><%= link_to "Ordering System", root_path %></h3>
+        <h5 class="muted">
+          Simple ordering system which supports a web user and a EDI.
+        </h5>
+      </div>
+      <hr />
+      <%= yield %>
+    </div>
+  </body>
 </html>
