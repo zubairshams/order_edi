@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'devise'
 gem "bootstrap-sass-rails", "~> 2.2.2.0"
 gem "audited-activerecord", "~> 3.0"
+gem "rufus-scheduler", "~> 2.0.19"
 
 # Gems used only for assets and not required
 # in production environments by default.

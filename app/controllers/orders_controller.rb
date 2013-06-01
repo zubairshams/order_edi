@@ -1,8 +1,10 @@
 class OrdersController < ApplicationController
+  before_filter :find_resource, except: [:index, :new, :create]
+
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = current_user.orders
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,8 +15,6 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    @order = Order.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @order }
@@ -34,7 +34,6 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.find(params[:id])
   end
 
   # POST /orders
@@ -44,6 +43,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        Order::Schedular.process(@order)
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render json: @order, status: :created, location: @order }
       else
@@ -56,8 +56,6 @@ class OrdersController < ApplicationController
   # PUT /orders/1
   # PUT /orders/1.json
   def update
-    @order = Order.find(params[:id])
-
     respond_to do |format|
       if @order.update_attributes(params[:order])
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
@@ -72,12 +70,17 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
-    @order = Order.find(params[:id])
     @order.destroy
 
     respond_to do |format|
       format.html { redirect_to orders_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def find_resource
+    @order = current_user.orders.find(params[:id])
   end
 end
