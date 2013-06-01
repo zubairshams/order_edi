@@ -1,11 +1,10 @@
 <div class="jumbotron">
   <% if user_signed_in? %>
-    <h1>Welcome back, trusted user!</h1>
+    <h1>Welcome to home page, trusted user!</h1>
     <p class="lead">
-      You have signed in!.  You might want to sign out now.
+      You can place new order from here.
     </p>
-    <%= link_to "Orders", orders_path, :class => 'btn btn-primary' %>
-    <%#= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+    <%= link_to "New Order", new_order_path, :class => 'btn btn-primary' %>
   <% else %>
     <h1>Welcome, new user!</h1>
     <p class="lead">

@@ -1,9 +1,8 @@
 TestApp::Application.routes.draw do
   
-  resources :orders
-
-
   devise_for :users
+  resources :orders
+  resources :audits
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

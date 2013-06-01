@@ -11,9 +11,15 @@
       <div class="masthead">
         <%= render 'layouts/user_header' %>
         <h3 class="muted"><%= link_to "Order Management System", root_path %></h3>
-        <h5 class="muted">
-          Simple ordering system which supports a web user and a EDI.
-        </h5>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <ul class="nav">
+              <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+              <li class="<%= 'active' if current_page?(orders_path) %>"><%= link_to "Orders", orders_path %></li>
+              <li class="<%= 'active' if current_page?(audits_path) %>"><%= link_to "User Audits", audits_path %></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <hr />
       <%= yield %>
