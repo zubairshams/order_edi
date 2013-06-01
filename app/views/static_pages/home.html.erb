@@ -4,7 +4,8 @@
     <p class="lead">
       You have signed in!.  You might want to sign out now.
     </p>
-    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+    <%= link_to "Orders", orders_path, :class => 'btn btn-primary' %>
+    <%#= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
   <% else %>
     <h1>Welcome, new user!</h1>
     <p class="lead">

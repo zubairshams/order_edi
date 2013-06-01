@@ -1,0 +1,23 @@
+<div class="border-form-div">
+  <%= form_for(@order) do |f| %>
+    <% if @order.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+        <ul>
+          <% @order.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.text_field :customer_name, :autofocus => true, :placeholder => 'Customer Name' %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.text_field :item_name, :autofocus => true, :placeholder => 'Item Name' %>
+    <%= f.text_field :price, :autofocus => true, :placeholder => 'Item Price' %>
+    <%= f.text_field :description, :autofocus => true, :placeholder => 'Item Description' %>
+    <%= f.text_field :billing_address, :autofocus => true, :placeholder => 'Billing Address' %>
+     <br/>
+    <%= f.submit "Submit", :class=>'btn btn-primary' %>
+<% end %>
+</div
