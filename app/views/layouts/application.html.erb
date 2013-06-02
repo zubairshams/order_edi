@@ -11,6 +11,7 @@
       <div class="masthead">
         <%= render 'layouts/user_header' %>
         <h3 class="muted"><%= link_to "Order Management System", root_path %></h3>
+        <% if user_signed_in? %>
         <div class="navbar">
           <div class="navbar-inner">
             <ul class="nav">
@@ -20,6 +21,7 @@
             </ul>
           </div>
         </div>
+        <%end%>
       </div>
       <hr />
       <%= yield %>

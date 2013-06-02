@@ -6,6 +6,10 @@ class OrdersController < ApplicationController
   def index
     @orders = current_user.orders
 
+    if request.xhr?
+      return render partial: 'orders'
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }

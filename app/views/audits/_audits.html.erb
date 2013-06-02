@@ -1,0 +1,7 @@
+<% @audits.each do |audit| %>
+  <tr>
+    <td><%= audit.auditable_type %></td>
+    <td><%= audit.action %></td>
+    <td><%= audit.audited_changes %></td>
+  </tr>
+<% end %>

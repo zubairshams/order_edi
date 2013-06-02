@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+function executeQuery() {
+  $.ajax({
+    //url: '/index',
+    success: function(data) {
+      $('#refreshable').html(data)
+    }
+  });
+  setTimeout(executeQuery, 60000);
+}
+
+$(document).ready(function() {
+  if ( $('#refreshable').length){
+    setTimeout(executeQuery, 60000);
+  }
+});
