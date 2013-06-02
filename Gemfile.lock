@@ -88,6 +88,7 @@ GEM
     mysql2 (0.3.11)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
+    pd_x12 (1.4.5)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -174,6 +175,7 @@ DEPENDENCIES
   launchy
   letter_opener
   mysql2
+  pd_x12
   rails (= 3.2.13)
   rspec-rails
   rufus-scheduler (~> 2.0.19)

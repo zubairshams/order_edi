@@ -11,6 +11,11 @@ gem "bootstrap-sass-rails", "~> 2.2.2.0"
 gem "audited-activerecord", "~> 3.0"
 gem "rufus-scheduler", "~> 2.0.19"
 
+# For EDR
+gem 'pd_x12'
+#gem "edi4r", "~> 0.9.4.1" bug in the gem
+#gem 'stupidedi'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
