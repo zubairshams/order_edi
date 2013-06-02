@@ -28,4 +28,14 @@ group :development do
   gem "letter_opener"
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
+  gem 'fabrication'
+  gem 'launchy'
+end
+
 gem 'jquery-rails'
