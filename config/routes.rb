@@ -1,4 +1,4 @@
-TestApp::Application.routes.draw do
+OrderEdi::Application.routes.draw do
   
   devise_for :users
   resources :orders
